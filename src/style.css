@@ -1,0 +1,41 @@
+/* Gaya untuk label (seperti sebelumnya) */
+.label {
+    color: white;
+    padding: 2px 5px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Gaya untuk judul di kanan bawah (seperti sebelumnya) */
+.title-label {
+    color: white;
+    font-size: 24px;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+/* --- GAYA BARU UNTUK PANEL PENJELASAN --- */
+.info-panel {
+    position: fixed; /* Posisi tetap di layar */
+    top: 50%;
+    left: 20px; /* Jarak dari kiri */
+    transform: translateY(-50%); /* Pusatkan secara vertikal */
+    width: 300px; 
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.75); /* Latar belakang transparan gelap */
+    color: white;
+    border: 2px solid #fff; /* Border putih */
+    border-radius: 10px;
+    z-index: 100; /* Pastikan di atas elemen lain */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-family: sans-serif;
+}
+
+  .info-panel h2 {
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
