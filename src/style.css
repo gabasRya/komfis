@@ -1,41 +1,79 @@
-/* Gaya untuk label (seperti sebelumnya) */
+/* GLOBAL RESET */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #02040a 0%, #000000 100%);
+  font-family: "Poppins", "Inter", sans-serif; /* Konsisten global font */
+}
+
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap");
+
+/* LABEL 3D */
 .label {
-    color: white;
-    padding: 2px 5px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
-    font-size: 14px;
-    white-space: nowrap;
+  color: #fff;
+  padding: 4px 8px;
+  background: rgba(20, 20, 20, 0.55);
+  border-radius: 6px;
+  font-size: 13px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
 }
 
-/* Gaya untuk judul di kanan bawah (seperti sebelumnya) */
+/* Title kanan bawah */
 .title-label {
-    color: white;
-    font-size: 24px;
-    padding: 5px 10px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
+  color: #fff;
+  font-size: 24px;
+  padding: 8px 14px;
+  background: rgba(15, 15, 15, 0.65);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
 }
 
-/* --- GAYA BARU UNTUK PANEL PENJELASAN --- */
+/* INFO PANEL*/
 .info-panel {
-    position: fixed; /* Posisi tetap di layar */
-    top: 50%;
-    left: 20px; /* Jarak dari kiri */
-    transform: translateY(-50%); /* Pusatkan secara vertikal */
-    width: 300px; 
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.75); /* Latar belakang transparan gelap */
-    color: white;
-    border: 2px solid #fff; /* Border putih */
-    border-radius: 10px;
-    z-index: 100; /* Pastikan di atas elemen lain */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    font-family: sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  width: 320px;
+  padding: 22px;
+
+  /* GLASSMORPHISM */
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* soft shadow */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+
+  color: white;
+  z-index: 100;
 }
 
-  .info-panel h2 {
-    border-bottom: 2px solid white;
-    padding-bottom: 10px;
-    margin-top: 0;
+/* Header */
+.info-panel h2 {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Isi */
+.info-panel p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f0f0f0;
 }
