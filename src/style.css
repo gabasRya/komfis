@@ -1,5 +1,8 @@
 /* GLOBAL RESET */
 
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap");
+
 html,
 body {
   margin: 0;
@@ -10,9 +13,6 @@ body {
   background: radial-gradient(circle at center, #02040a 0%, #000000 100%);
   font-family: "Poppins", "Inter", sans-serif; /* Konsisten global font */
 }
-
-/* Import Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap");
 
 /* LABEL 3D */
 .label {
