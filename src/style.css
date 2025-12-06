@@ -11,7 +11,50 @@ body {
   height: 100%;
   overflow: hidden;
   background: radial-gradient(circle at center, #02040a 0%, #000000 100%);
-  font-family: "Poppins", "Inter", sans-serif; /* Konsisten global font */
+  font-family: "Poppins", "Inter", sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background: rgba(10, 10, 20, 0.7);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.nav-left {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #5eead4;
+}
+
+.nav-right {
+  display: flex;
+  gap: 26px;
+  padding-right: 40px;
+  flex-shrink: 0;
+}
+
+.nav-right li {
+  list-style: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.25s;
+  color: #cfcfcf;
+}
+
+.nav-right li:hover {
+  color: #5eead4;
 }
 
 /* LABEL 3D */
@@ -36,44 +79,107 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(6px);
 }
-
-/* INFO PANEL*/
+/* ===== PANEL FUTURISTIK BIRU ===== */
 .info-panel {
   position: fixed;
   top: 50%;
   left: 30px;
   transform: translateY(-50%);
-  width: 320px;
-  padding: 22px;
-
-  /* GLASSMORPHISM */
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  /* soft shadow */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  width: 340px;
+  height: 480px;
+  padding: 24px;
 
   color: white;
+
+  background:
+    url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(145deg, rgba(0, 120, 255, 0.12), rgba(0, 0, 0, 0.82));
+  backdrop-filter: blur(10px);
+
+  border-radius: 14px;
+
+  /* Futuristik biru glow */
+  border: 1px solid rgba(0, 190, 255, 0.55);
+  box-shadow:
+    0 0 12px rgba(0, 180, 255, 0.35),
+    inset 0 0 18px rgba(0, 160, 255, 0.18);
+
+  overflow-y: auto;
   z-index: 100;
 }
 
-/* Header */
+/* Judul panel */
 .info-panel h2 {
   margin: 0 0 12px;
   padding-bottom: 8px;
   font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 180, 255, 0.45);
 }
 
-/* Isi */
+/* Isi teks */
 .info-panel p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
-  color: #f0f0f0;
+  color: #dff7ff;
+}
+
+/* Scrollbar futuristik biru */
+.info-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.info-panel::-webkit-scrollbar-thumb {
+  background: rgba(0, 180, 255, 0.6);
+  border-radius: 6px;
+}
+
+.info-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 210, 255, 0.85);
+}
+
+/* ===== PANEL STRUCTURE ===== */
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panel-summary {
+  flex: 1;
+}
+
+.panel-detail {
+  flex: 1;
+  display: none;
+}
+
+/* ===== BOTTOM BUTTON ===== */
+.panel-bottom {
+  padding-top: 14px;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.panel-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+
+  background: rgba(0, 150, 255, 0.12);
+  color: #8feaff;
+
+  border: 1px solid rgba(0, 190, 255, 0.45);
+  border-radius: 8px;
+
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: 0.25s;
+}
+
+.panel-btn:hover {
+  background: rgba(0, 190, 255, 0.25);
+  color: white;
 }

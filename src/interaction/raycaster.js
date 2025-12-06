@@ -16,9 +16,39 @@ export function setExpanded(value) {
   isExpanded = value;
 }
 
+/**
+ * Fungsi pusat untuk menangani klik layer,
+ * baik dari raycaster (klik objek 3D) maupun navbar.
+ */
+export function handleLayerClick(clickedObject) {
+  if (!clickedObject || !clickedObject.userData) return;
+
+  const layerName = clickedObject.userData.layerName;
+  if (!layerName) return;
+
+  // 1. Update panel info
+  updateInfoPanel(layerName);
+
+  // 2. Expand/Collapse jika layer adalah "Crust"
+  if (layerName === "Crust") {
+    isExpanded = !isExpanded;
+
+    crustLabelObject.visible = isExpanded;
+    crustLine.visible = isExpanded;
+
+    layerLabels.forEach((item) => {
+      item.label.visible = isExpanded;
+      item.line.visible = isExpanded;
+    });
+  }
+}
+
+/**
+ * Setup interaksi klik raycaster pada objek 3D.
+ */
 export function setupClickHandler(camera, interactableObjects) {
   function onMouseClick(event) {
-    // Perhitungan posisi mouse
+    // Hitung posisi mouse
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
@@ -28,27 +58,14 @@ export function setupClickHandler(camera, interactableObjects) {
 
     if (intersects.length > 0) {
       const clickedObject = intersects[0].object;
-      const layerName = clickedObject.userData.layerName;
-
-      // LOGIKA MENAMPILKAN PENJELASAN
-      if (layerName) {
-        updateInfoPanel(layerName);
-      }
-
-      // LOGIKA EXPAND/COLLAPSE
-      if (clickedObject.userData.layerName === "Crust") {
-        isExpanded = !isExpanded;
-
-        // Set visibilitas label dan garis setelah klik
-        crustLabelObject.visible = isExpanded;
-        crustLine.visible = isExpanded;
-        layerLabels.forEach((item) => {
-          item.label.visible = isExpanded;
-          item.line.visible = isExpanded;
-        });
-      }
+      handleLayerClick(clickedObject); // pakai fungsi pusat
     }
   }
 
   window.addEventListener("click", onMouseClick, false);
 }
+
+// EVENT DARI NAVBAR
+window.addEventListener("layer-clicked", (e) => {
+  handleLayerClick(e.detail.object);
+});
