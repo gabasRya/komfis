@@ -1,47 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduEarth</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduEarth</title>
+  </head>
 
-<body>
-  <nav class="navbar">
-    <div class="nav-left">EduEarth</div>
-    <ul id="layer-menu" class="nav-right"></ul>
-  </nav>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">EduEarth</div>
+      <ul id="layer-menu" class="nav-right"></ul>
+    </nav>
 
-  <!-- PANEL INFORMASI -->
-  <div id="info-panel" class="info-panel">
-    <div class="panel-content">
+    <!-- PANEL INFORMASI -->
+    <div id="info-panel" class="info-panel">
+      <div class="panel-content">
+        <!-- Bagian ringkas -->
+        <div id="panel-summary" class="panel-summary">
+          <h2 id="panel-title">Struktur Bumi</h2>
+          <p id="panel-content">
+            Klik pada salah satu lapisan (Crust, Mantle, Outer Core, atau Inner
+            Core) untuk melihat penjelasan lebih lanjut.
+          </p>
+        </div>
 
-      <!-- Bagian ringkas -->
-      <div id="panel-summary" class="panel-summary">
-        <h2 id="panel-title">Struktur Bumi</h2>
-        <p id="panel-content">
-          Klik pada salah satu lapisan (Crust, Mantle, Outer Core, atau Inner Core)
-          untuk melihat penjelasan lebih lanjut.
-        </p>
+        <!-- Bagian detail -->
+        <div id="panel-detail" class="panel-detail">
+          <h2 id="layer-title"></h2>
+          <p id="layer-short"></p>
+          <p id="layer-full"></p>
+        </div>
+
+        <!-- Tombol bawah -->
+        <div class="panel-bottom">
+          <button id="panel-toggle-btn" class="panel-btn">Lihat Detail</button>
+        </div>
       </div>
-
-      <!-- Bagian detail -->
-      <div id="panel-detail" class="panel-detail">
-        <h2 id="detail-title"></h2>
-        <p id="detail-content"></p>
-      </div>
-
-      <!-- Tombol bawah -->
-      <div class="panel-bottom">
-        <button id="panel-toggle-btn" class="panel-btn">
-          Lihat Detail
-        </button>
-      </div>
-
     </div>
-  </div>
 
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

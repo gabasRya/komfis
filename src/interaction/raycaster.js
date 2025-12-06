@@ -1,4 +1,5 @@
 import * as THREE from "three";
+
 import { updateInfoPanel } from "../ui/infoPanel.js";
 import {
   crustLabelObject,

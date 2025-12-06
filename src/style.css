@@ -91,8 +91,7 @@ body {
 
   color: white;
 
-  background:
-    url("https://www.transparenttextures.com/patterns/stardust.png"),
+  background: url("https://www.transparenttextures.com/patterns/stardust.png"),
     linear-gradient(145deg, rgba(0, 120, 255, 0.12), rgba(0, 0, 0, 0.82));
   backdrop-filter: blur(10px);
 
@@ -100,8 +99,7 @@ body {
 
   /* Futuristik biru glow */
   border: 1px solid rgba(0, 190, 255, 0.55);
-  box-shadow:
-    0 0 12px rgba(0, 180, 255, 0.35),
+  box-shadow: 0 0 12px rgba(0, 180, 255, 0.35),
     inset 0 0 18px rgba(0, 160, 255, 0.18);
 
   overflow-y: auto;
@@ -182,4 +180,19 @@ body {
 .panel-btn:hover {
   background: rgba(0, 190, 255, 0.25);
   color: white;
+}
+
+#panel-detail ul {
+  padding-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+#panel-toggle-btn {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#panel-detail {
+  padding-bottom: 40px;
 }
